@@ -85,26 +85,31 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="../info/menu"><i class="fa fa-fw fa-edit"></i> Info Page(도영)</a>
+                        <a href="<c:url value="/info/adminInfo" />"><i class="fa fa-fw fa-edit"></i> 신청 현황</a>
                     </li>
                     <li class="active">
-                        <a href="menu"><i class="fa fa-fw fa-edit"></i> Manage Page(주연)</a>
-                        <ul id="manage" class="collapse in" aria-expanded="true">
-							<li><a href="menu#team">팀 관리</a></li>
-							<li class="acrive"><a href="menu#grere">장르 관리</a></li>
-							<li><a href="menu#grade">등급 관리</a></li>
+                        <a href="<c:url value="/admin/basic" />"><i class="fa fa-fw fa-edit"></i> 일반 관리</a>
+                        <ul class="collapse in" aria-expanded="true">
+							<li><a href="<c:url value="/admin/basic#team" />">팀 관리</a></li>
+							<li class="active"><a href="<c:url value="/admin/basic#genre" />">장르 관리</a></li>
 						</ul>
-                    </li>
-                    <li>
-                        <a href="../apply/insertApply"><i class="fa fa-fw fa-edit"></i> Apply Page(현정)</a>
-                    </li>
-                    <li>
-                        <a href="../member/menu"><i class="fa fa-fw fa-edit"></i> Member Page(민철)</a>
-                        <ul id="user" class="collapse in" aria-expanded="true">
-							<li><a href="../member/login">로그인</a></li>
-							<li><a href="../member/memberInsert">회원가입</a></li>
+					</li>
+					<li>
+                        <a href="<c:url value="/admin/season" />"><i class="fa fa-fw fa-edit"></i> 시즌 관리</a>
+                        <ul class="collapse in" aria-expanded="true">
+							<li><a href="<c:url value="/admin/season#season" />">시즌 관리</a></li>
+							<li><a href="<c:url value="/admin/season#project" />">프로젝트 관리</a></li>
+							<li><a href="<c:url value="/admin/duesCheck" />">회비 관리</a></li>
+							
 						</ul>
-                    </li>
+					</li>
+					<li>
+                        <a href="<c:url value="/admin/user" />"><i class="fa fa-fw fa-edit"></i> 회원 관리</a>
+                        <ul class="collapse in" aria-expanded="true">
+							<li><a href="<c:url value="/admin/user#user" />">회원 관리</a></li>
+							<li><a href="<c:url value="/admin/user#grade" />">등급 관리</a></li>
+						</ul>
+					</li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

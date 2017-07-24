@@ -82,20 +82,19 @@
                         </li>
                     </ul>
                 </li>
+                
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="info/menu"><i class="fa fa-fw fa-edit"></i> Info Page(도영)</a>
+                        <a href="<c:url value="/info/menu" />"><i class="fa fa-fw fa-edit"></i> 신청 현황</a>
                     </li>
                     <li>
-                        <a href="manage/menu"><i class="fa fa-fw fa-edit"></i> Manage Page(주연)</a>
-                        <ul id="team" class="collapse in" aria-expanded="true">
-							<li><a href="manage/menu#team">팀 관리</a></li>
-							<li><a href="manage/menu#grere">장르 관리</a></li>
-							<li><a href="manage/menu#grade">등급 관리</a></li>
-						</ul>
+                        <a href="<c:url value="/admin/menu" />"><i class="fa fa-fw fa-edit"></i> 관리자 페이지</a>
+					</li>
+					<li>
+                        <a href="<c:url value="/user/menu" />"><i class="fa fa-fw fa-edit"></i> 유저 페이지</a>
 					</li>
                     <li>
                         <a href="apply/insertApply"><i class="fa fa-fw fa-edit"></i> Apply Page(현정)</a>

@@ -9,7 +9,6 @@ import basic.controllers.AbstractController;
 import basic.controllers.ModelAndView;
 import dandb.GenreVO;
 import dandb.GradeVO;
-import dandb.TeacherVO;
 import dandb.TeamVO;
 import info.model.InfoDAO;
 import info.model.InfoDAOImpl;
@@ -20,7 +19,6 @@ public class ManageList extends AbstractController{
 		
 		TeamVO teamVO = new TeamVO();
 		GenreVO genreVO = new GenreVO();
-		TeacherVO teacherVO = new TeacherVO();
 		GradeVO gradeVO = new GradeVO();
 		
 		InfoDAO infoDAO = InfoDAOImpl.getInstance();
@@ -30,13 +28,11 @@ public class ManageList extends AbstractController{
 		try {
 			List<TeamVO> teamList = infoDAO.getTeamList(); 
 			List<GenreVO> genreList = infoDAO.getGenreList();
-			List<TeacherVO> teacherList = infoDAO.getTeacherList();
 			List<GradeVO> gradeList = infoDAO.getGradeList();
 			
 			mav.setViewName("/WEB-INF/menu/managepage.jsp");
 			mav.addObject("teamList", teamList);
 			mav.addObject("genreList", genreList);
-			mav.addObject("teacherList", teacherList);
 			mav.addObject("gradeList", gradeList);
 		} catch (Exception e) {
 			e.printStackTrace();

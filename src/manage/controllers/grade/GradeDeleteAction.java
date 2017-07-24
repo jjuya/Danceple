@@ -23,7 +23,7 @@ public class GradeDeleteAction extends AbstractController {
 		try {
 			gradeManageDAO .deleteGrade(gradeId);
 			mav.addObject("msg", "등급 삭제 성공");
-			mav.addObject("url", "menu#grade");
+			mav.addObject("url", "../admin/user#grade");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "등급 삭제 실패");

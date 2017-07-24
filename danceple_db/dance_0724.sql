@@ -4,26 +4,27 @@
 DROP TABLE tb_Apply CASCADE CONSTRAINTS;
 DROP TABLE tb_Duescheck CASCADE CONSTRAINTS;
 DROP TABLE tb_Genre CASCADE CONSTRAINTS;
+DROP TABLE tb_Usernemo CASCADE CONSTRAINTS;
 DROP TABLE tb_User CASCADE CONSTRAINTS;
 DROP TABLE tb_Grade CASCADE CONSTRAINTS;
-DROP TABLE tb_Project CASCADE CONSTRAINTS;
 DROP TABLE tb_Season CASCADE CONSTRAINTS;
+DROP TABLE tb_Project CASCADE CONSTRAINTS;
 DROP TABLE tb_Team CASCADE CONSTRAINTS;
 
 
 
 /* Drop Sequences */
 
+DROP SEQUENCE seq_project;
 DROP SEQUENCE seq_season;
-DROP SEQUENCE seq_teacher;
 
 
 
 
 /* Create Sequences */
 
+CREATE SEQUENCE seq_project;
 CREATE SEQUENCE seq_season;
-CREATE SEQUENCE seq_teacher;
 
 
 
@@ -74,15 +75,14 @@ CREATE TABLE tb_Grade
 
 CREATE TABLE tb_Project
 (
-	-- 시즌 인덱싱
-	seasonid number DEFAULT 0 NOT NULL,
+	projectno number NOT NULL,
 	projecttitle varchar2(50) NOT NULL,
 	-- YYYY/MM/DD
 	-- 매 시즌 프로젝트 실행일자
 	projectdate date NOT NULL,
 	-- 프로젝트 세부내용
 	projectdesc varchar2(50),
-	PRIMARY KEY (seasonid)
+	PRIMARY KEY (projectno)
 );
 
 
@@ -97,6 +97,7 @@ CREATE TABLE tb_Season
 	startdate date NOT NULL,
 	-- YYYY/MM/DD
 	enddate date NOT NULL,
+	projectno number NOT NULL,
 	PRIMARY KEY (seasonid)
 );
 
@@ -134,10 +135,16 @@ CREATE TABLE tb_User
 	-- 
 	-- 관리자가 설정할 수 있게
 	penalty number DEFAULT 0 NOT NULL,
-	-- 현재 어떤 팀 소속인지 확인하기 위해 참조.
-	teamid varchar2(6) NOT NULL,
 	birthday date NOT NULL,
 	imgurl varchar2(150) NOT NULL,
+	PRIMARY KEY (userid)
+);
+
+
+CREATE TABLE tb_Usernemo
+(
+	userid varchar2(20) NOT NULL,
+	memo varchar2(50),
 	PRIMARY KEY (userid)
 );
 
@@ -169,6 +176,12 @@ ALTER TABLE tb_User
 ;
 
 
+ALTER TABLE tb_Season
+	ADD FOREIGN KEY (projectno)
+	REFERENCES tb_Project (projectno)
+;
+
+
 ALTER TABLE tb_Apply
 	ADD FOREIGN KEY (seasonid)
 	REFERENCES tb_Season (seasonid)
@@ -181,12 +194,6 @@ ALTER TABLE tb_Duescheck
 ;
 
 
-ALTER TABLE tb_Project
-	ADD FOREIGN KEY (seasonid)
-	REFERENCES tb_Season (seasonid)
-;
-
-
 ALTER TABLE tb_Apply
 	ADD FOREIGN KEY (teamid)
 	REFERENCES tb_Team (teamid)
@@ -194,12 +201,6 @@ ALTER TABLE tb_Apply
 
 
 ALTER TABLE tb_Duescheck
-	ADD FOREIGN KEY (teamid)
-	REFERENCES tb_Team (teamid)
-;
-
-
-ALTER TABLE tb_User
 	ADD FOREIGN KEY (teamid)
 	REFERENCES tb_Team (teamid)
 ;
@@ -212,6 +213,12 @@ ALTER TABLE tb_Apply
 
 
 ALTER TABLE tb_Duescheck
+	ADD FOREIGN KEY (userid)
+	REFERENCES tb_User (userid)
+;
+
+
+ALTER TABLE tb_Usernemo
 	ADD FOREIGN KEY (userid)
 	REFERENCES tb_User (userid)
 ;
@@ -223,7 +230,6 @@ ALTER TABLE tb_Duescheck
 COMMENT ON COLUMN tb_Apply.seasonid IS '시즌 인덱싱';
 COMMENT ON COLUMN tb_Duescheck.seasonid IS '시즌 인덱싱';
 COMMENT ON COLUMN tb_Genre.genreurl IS '관련 영상이나 설명 링크';
-COMMENT ON COLUMN tb_Project.seasonid IS '시즌 인덱싱';
 COMMENT ON COLUMN tb_Project.projectdate IS 'YYYY/MM/DD
 매 시즌 프로젝트 실행일자';
 COMMENT ON COLUMN tb_Project.projectdesc IS '프로젝트 세부내용';
@@ -241,8 +247,6 @@ COMMENT ON COLUMN tb_User.penalty IS '1 : 시즌 신청 패널티 있는 경우.
 0 : 정상
 
 관리자가 설정할 수 있게';
-COMMENT ON COLUMN tb_User.teamid IS '현재 어떤 팀 소속인지 확인하기 위해 참조.';
-
 
 insert into tb_genre (genreid, genrename, genreurl)values (0,'Anything is OK!','http://www.naver.com');
 insert into tb_genre (genreid, genrename, genreurl)values (1,'Voguing Dance','http://www.google.com');
@@ -287,7 +291,6 @@ insert into tb_team (teamid, teamname, teamday, location,maintime,pretime,teamur
 
 select * from tb_team;
 
-insert into tb_grade (gradeid, gradename) values(0, '관리');
 insert into tb_grade (gradeid, gradename) values(1, '신규');
 insert into tb_grade (gradeid, gradename) values(2, '기존');
 insert into tb_grade (gradeid, gradename) values(3, '복귀');

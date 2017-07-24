@@ -6,8 +6,7 @@ public class SeasonVO {
 	private String snMonth;
 	private String startDate;
 	private String endDate;
-	private String projectDate;
-	private String projectDesc;
+	private long projectNo;
 	
 	public long getSeasonId() {
 		return seasonId;
@@ -33,23 +32,17 @@ public class SeasonVO {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
-	public String getProjectDate() {
-		return projectDate;
+	public long getProjectNo() {
+		return projectNo;
 	}
-	public void setProjectDate(String projectDate) {
-		this.projectDate = projectDate;
+	public void setProjectNo(long projectNo) {
+		this.projectNo = projectNo;
 	}
-	public String getProjectDesc() {
-		return projectDesc;
-	}
-	public void setProjectDesc(String projectDesc) {
-		this.projectDesc = projectDesc;
-	}
-	
 	@Override
 	public String toString() {
-		return "SeasonVO [seasonId=" + seasonId + ", snmonth=" + snMonth + ", startDate=" + startDate + ", endDate="
-				+ endDate + ", projectDate=" + projectDate + ", projectDesc=" + projectDesc + "]";
+		return "SeasonVO [seasonId=" + seasonId + ", snMonth=" + snMonth + ", startDate=" + startDate + ", endDate="
+				+ endDate + ", projectNo=" + projectNo + "]";
 	}
+	
 
 } //end class

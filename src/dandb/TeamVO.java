@@ -10,6 +10,7 @@ public class TeamVO {
 	private String mainTime;
 	private String preTime;
 	private String teamUrl;
+	private String teamLevel;
 	
 	public String getTeamId() {
 		return teamId;
@@ -53,11 +54,18 @@ public class TeamVO {
 	public void setTeamUrl(String teamUrl) {
 		this.teamUrl = teamUrl;
 	}
+	public String getTeamLevel() {
+		return teamLevel;
+	}
+	public void setTeamLevel(String teamLevel) {
+		this.teamLevel = teamLevel;
+	}
 	
 	@Override
 	public String toString() {
 		return "TeamVO [teamId=" + teamId + ", teamName=" + teamName + ", teamDay=" + teamDay + ", location=" + location
-				+ ", mainTime=" + mainTime + ", preTime=" + preTime + ", teamUrl=" + teamUrl + "]";
+				+ ", mainTime=" + mainTime + ", preTime=" + preTime + ", teamUrl=" + teamUrl + ", teamLevel="
+				+ teamLevel + "]";
 	}
 	
 } //end class

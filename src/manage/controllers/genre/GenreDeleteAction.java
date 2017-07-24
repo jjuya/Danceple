@@ -22,7 +22,7 @@ public class GenreDeleteAction extends AbstractController {
 		try {
 			genreManageDAO .deleteGenre(genreId);
 			mav.addObject("msg", "장르 삭제 성공");
-			mav.addObject("url", "menu#genre");
+			mav.addObject("url", "../admin/basic#genre");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "장르 삭제 실패");

@@ -35,7 +35,7 @@ public class GenreUpdate extends AbstractController{
 			ModelAndView mav = new ModelAndView("/WEB-INF/views/result.jsp");
 
 			mav.addObject("msg", e.getMessage());
-			mav.addObject("url", "menu");
+			mav.addObject("url", "../admin/basic#genre");
 			
 			return mav;
 		}

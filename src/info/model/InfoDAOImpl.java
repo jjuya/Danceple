@@ -1,22 +1,16 @@
 package info.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.List;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
-import com.ibatis.sqlmap.engine.mapping.sql.Sql;
+import ibatis.QueryHandler;
 
-import basic.model.ConnectDAOImpl;
 import dandb.ApplyVO;
 import dandb.GenreVO;
 import dandb.GradeVO;
+import dandb.ProjectVO;
 import dandb.UserVO;
-import ibatis.QueryHandler;
 import dandb.SeasonVO;
-import dandb.TeacherVO;
 import dandb.TeamVO;
 
 public class InfoDAOImpl implements InfoDAO{
@@ -62,6 +56,25 @@ public class InfoDAOImpl implements InfoDAO{
 		SqlMapClient sqlMap = QueryHandler.getInstance();
 		return sqlMap.queryForList("info.getSeasonList");
 	}
+	
+	@Override
+	public SeasonVO getSeasonDetail(long seasonId) throws Exception {
+		SqlMapClient sqlMap = QueryHandler.getInstance();
+		return (SeasonVO) sqlMap.queryForObject("info.getSeasonDetail", seasonId);
+	}
+	
+	@Override
+	public List<ProjectVO> getProjectList() throws Exception {
+		SqlMapClient sqlMap = QueryHandler.getInstance();
+		return sqlMap.queryForList("info.getProjectList");
+	}
+	
+	@Override
+	public ProjectVO getProjectDetail(long projectNo) throws Exception {
+		SqlMapClient sqlMap = QueryHandler.getInstance();
+		return (ProjectVO) sqlMap.queryForObject("info.getProjectDetail", projectNo);
+	}
+	
 	@Override
 	public List<ApplyVO> getApplyList() throws Exception {
 		SqlMapClient sqlMap = QueryHandler.getInstance();
@@ -71,12 +84,6 @@ public class InfoDAOImpl implements InfoDAO{
 	public List<UserVO> getUserList() throws Exception {
 		SqlMapClient sqlMap = QueryHandler.getInstance();
 		return sqlMap.queryForList("info.getUserList");
-	}
-	
-	@Override
-	public List<TeacherVO> getTeacherList() throws Exception {
-		SqlMapClient sqlMap = QueryHandler.getInstance();
-		return sqlMap.queryForList("info.getTeacherList");
 	}
 	
 	@Override

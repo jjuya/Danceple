@@ -25,6 +25,8 @@
 	<sqlMap resource="ibatis/gradeManage-mapping.xml" />
 	<sqlMap resource="ibatis/teacherManage-mapping.xml" />
 	<sqlMap resource="ibatis/teamManage-mapping.xml" />
+	<sqlMap resource="ibatis/seasonManage-mapping.xml" />
+	<sqlMap resource="ibatis/projectManage-mapping.xml" />
 	
 	<!-- apply -->
 	<sqlMap resource="ibatis/apply-mapping.xml"/>

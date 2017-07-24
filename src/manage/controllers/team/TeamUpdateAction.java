@@ -37,7 +37,7 @@ public class TeamUpdateAction extends AbstractController {
 		try {
 			teamManageDAO .updateTeam(teamVO);
 			mav.addObject("msg", "팀 수정 성공");
-			mav.addObject("url", "menu#team");
+			mav.addObject("url", "../admin/basic#team");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "팀 수정 실패");
