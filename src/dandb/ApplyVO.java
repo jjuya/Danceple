@@ -2,24 +2,24 @@ package dandb;
 
 public class ApplyVO {
 
-	private String memberId;
+	private String userId;
 	private String teamId;
 	private String genre1;
 	private String genre2;
 	private String genre3;
 	private int seasonId;
 	private String others;
-	private String membername;
+	private String username;
 	private String phone;
 	
 	
-	public String getMemberId() {
-		return memberId;
+	public String getUserId() {
+		return userId;
 	}
 
 
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 
@@ -83,13 +83,13 @@ public class ApplyVO {
 	}
 
 
-	public String getMembername() {
-		return membername;
+	public String getUsername() {
+		return username;
 	}
 
 
-	public void setMembername(String membername) {
-		this.membername = membername;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 
@@ -105,8 +105,8 @@ public class ApplyVO {
 
 	@Override
 	public String toString() {
-		return "ApplyVO [memberId=" + memberId + ", teamId=" + teamId + ", genre1=" + genre1 + ", genre2=" + genre2
-				+ ", genre3=" + genre3 + ", seasonId=" + seasonId + ", others=" + others + ", membername=" + membername
+		return "ApplyVO [userId=" + userId + ", teamId=" + teamId + ", genre1=" + genre1 + ", genre2=" + genre2
+				+ ", genre3=" + genre3 + ", seasonId=" + seasonId + ", others=" + others + ", username=" + username
 				+ ", phone=" + phone + "]";
 	}
 	

@@ -11,6 +11,7 @@ public class UserVO {
 	private String gender;
 	private String gradeId;
 	private String teamId;
+	private String imgUrl;
 	private int penalty;
 	
 	public String getUserId() {
@@ -67,6 +68,13 @@ public class UserVO {
 	public void setTeamId(String teamId) {
 		this.teamId = teamId;
 	}
+	
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
 	public int getPenalty() {
 		return penalty;
 	}
@@ -75,9 +83,10 @@ public class UserVO {
 	}
 	@Override
 	public String toString() {
-		return "MemberVO [userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName + ", phone=" + phone
+		return "UserVO [userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName + ", phone=" + phone
 				+ ", birthday=" + birthday + ", email=" + email + ", gender=" + gender + ", gradeId=" + gradeId
-				+ ", teamId=" + teamId + ", penalty=" + penalty + "]";
+				+ ", teamId=" + teamId + ", imgUrl=" + imgUrl + ", penalty=" + penalty + "]";
 	}
+	
 	
 } //end class

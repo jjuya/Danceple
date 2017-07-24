@@ -16,26 +16,30 @@
 
 <link rel="shortcut icon" href="../favicon.ico" />
 
-<script type="text/javascript">
-	function changepage(page) {
-	    location.href="insertApply?page="+page;
-	}
-	</script>
-
 <title>Danceple - Template</title>
 
-<!-- Bootstrap Core CSS -->
-<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap Core CSS -->
+    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link href="../css/sb-admin.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="<c:url value="/resources/css/sb-admin.css" />" rel="stylesheet">
 
-<!-- Morris Charts CSS -->
-<link href="../css/plugins/morris.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="<c:url value="/resources/css/plugins/morris.css" />" rel="stylesheet">
 
-<!-- Custom Fonts -->
-<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet"
-	type="text/css">
+    <!-- Custom Fonts -->
+    <link href="<c:url value="/resources/font-awesome/css/font-awesome.min.css" />" rel="stylesheet" type="text/css">
+    
+    <!-- jQuery -->
+    <script src="<c:url value="/resources/js/jquery.js" />"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+
+	<!-- Morris Charts JavaScript -->
+	<script src="<c:url value="/resources/js//plugins/morris/raphael.min.js" />"></script>
+	<script src="<c:url value="/resources/js//plugins/morris/morris.min.js" />"></script>
+	<script src="<c:url value="/resources/js//plugins/morris/morris-data.js"/>"></script>
 
 </head>
 <body>
@@ -163,17 +167,6 @@
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../js/plugins/morris/raphael.min.js"></script>
-    <script src="../js/plugins/morris/morris.min.js"></script>
-    <script src="../js/plugins/morris/morris-data.js"></script>
 
 </body>
 

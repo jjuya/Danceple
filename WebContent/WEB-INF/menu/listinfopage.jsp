@@ -26,23 +26,27 @@ function changepage(page){
 	<link rel="shortcut icon" href="../favicon-32x32.png" />
 	
 	<!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/sb-admin.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/sb-admin.css" />" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="../css/plugins/morris.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/morris.css" />" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/resources/font-awesome/css/font-awesome.min.css" />" rel="stylesheet" type="text/css">
+    
+    <!-- jQuery -->
+    <script src="<c:url value="/resources/js/jquery.js" />"></script>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+
+	<!-- Morris Charts JavaScript -->
+	<script src="<c:url value="/resources/js//plugins/morris/raphael.min.js" />"></script>
+	<script src="<c:url value="/resources/js//plugins/morris/morris.min.js" />"></script>
+	<script src="<c:url value="/resources/js//plugins/morris/morris-data.js"/>"></script>
     
 </head>
 <body>
@@ -89,11 +93,11 @@ function changepage(page){
                         <a href="/menu"><i class="fa fa-fw fa-edit"></i> Info Page(도영)</a>
                     </li>
                     <li>
-                        <a href="../manege/menu"><i class="fa fa-fw fa-edit"></i> Manage Page(주연)</a>
+                        <a href="../manage/menu"><i class="fa fa-fw fa-edit"></i> Manage Page(주연)</a>
                         <ul id="manage" class="collapse in" aria-expanded="true">
-							<li><a href="../manege/menu#team">팀 관리</a></li>
-							<li><a href="../manege/menu#grere">장르 관리</a></li>
-							<li><a href="../manege/menu#grade">등급 관리</a></li>
+							<li><a href="../manage/menu#team">팀 관리</a></li>
+							<li><a href="../manage/menu#genre">장르 관리</a></li>
+							<li><a href="../manage/menu#grade">등급 관리</a></li>
 						</ul>
                     </li>
                     <li>
@@ -246,17 +250,6 @@ function changepage(page){
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-	<script src="../js/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="../js/bootstrap.min.js"></script>
-
-	<!-- Morris Charts JavaScript -->
-	<script src="../js/plugins/morris/raphael.min.js"></script>
-	<script src="../js/plugins/morris/morris.min.js"></script>
-	<script src="../js/plugins/morris/morris-data.js"></script>
 	
 <!-- 
 <td width="75%" valign="center">
