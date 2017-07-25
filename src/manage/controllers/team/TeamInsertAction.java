@@ -37,7 +37,7 @@ public class TeamInsertAction extends AbstractController {
 		try {
 			teamManageDAO .insertTeam(teamVO);
 			mav.addObject("msg", "팀 등록");
-			mav.addObject("url", "../admin/basic#team");
+			mav.addObject("url", "../admin/team");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "팀 등록 실패");

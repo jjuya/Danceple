@@ -8,6 +8,7 @@
 	
 	<typeAlias alias="SeasonVO" type="dandb.SeasonVO"/>
 	<typeAlias alias="ProjectVO" type="dandb.ProjectVO"/>
+	<typeAlias alias="DuescheckVO" type="dandb.DuescheckVO"/>
 	
 	<typeAlias alias="TeamVO" type="dandb.TeamVO"/>
 	<typeAlias alias="GenreVO" type="dandb.GenreVO"/>
@@ -41,6 +42,9 @@
 	WHERE projectno=#projectNo#
 	</select>
 	
+	<select id="getDuesCheckList" resultClass="DuescheckVO">
+	SELECT * FROM tb_Duescheck
+	</select>
 	
 	<select id="getTeamList" resultClass="TeamVO">
 	SELECT * FROM tb_Team

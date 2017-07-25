@@ -29,7 +29,7 @@ public class ProjectInsertAction extends AbstractController {
 		try {
 			projectManageDAO.insertProject(projectVO);
 			mav.addObject("msg", "프로젝트 등록");
-			mav.addObject("url", "../admin/season#project");
+			mav.addObject("url", "../admin/project");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "프로젝트 등록 실패");

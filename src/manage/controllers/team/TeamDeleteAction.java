@@ -22,7 +22,7 @@ public class TeamDeleteAction extends AbstractController {
 		try {
 			teamManageDAO .deleteTeam(teamId);
 			mav.addObject("msg", "팀 삭제");
-			mav.addObject("url", "../admin/basic#team");
+			mav.addObject("url", "../admin/team");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "팀 삭제 실패");

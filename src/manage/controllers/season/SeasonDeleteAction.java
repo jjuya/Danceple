@@ -26,7 +26,7 @@ public class SeasonDeleteAction extends AbstractController {
 		try {
 			seasonManageDAO.deleteSeason(seasonId);
 			mav.addObject("msg", "시즌 삭제");
-			mav.addObject("url", "../admin/season#season");
+			mav.addObject("url", "../admin/season");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "시즌 삭제 실패");

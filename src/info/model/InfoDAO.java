@@ -3,6 +3,7 @@ package info.model;
 import java.util.List;
 
 import dandb.ApplyVO;
+import dandb.DuescheckVO;
 import dandb.GenreVO;
 import dandb.GradeVO;
 import dandb.ProjectVO;
@@ -20,6 +21,8 @@ public interface InfoDAO {
 	List<SeasonVO> getSeasonList() throws Exception;
 	
 	List<ProjectVO> getProjectList() throws Exception;
+	
+	List<DuescheckVO> getDuesCheckList() throws Exception;
 
 	List<UserVO> getUserList() throws Exception;
 	
@@ -36,6 +39,8 @@ public interface InfoDAO {
 	SeasonVO getSeasonDetail(long seasonId) throws Exception;
 	
 	ProjectVO getProjectDetail(long projectNo) throws Exception;
+
+	
 
 	
 

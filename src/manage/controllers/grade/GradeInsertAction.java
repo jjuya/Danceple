@@ -27,7 +27,7 @@ public class GradeInsertAction extends AbstractController {
 		try {
 			gradeManageDAO .insertGrade(gradeVO);
 			mav.addObject("msg", "등급 등록");
-			mav.addObject("url", "../admin/user#grade");
+			mav.addObject("url", "../admin/grade");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "등급 등록 실패");

@@ -21,11 +21,10 @@ public class AdminInfo extends AbstractController {
         ModelAndView mav = new ModelAndView();
         try {
         	List<TeamVO> teamlist = listDAO.getTeamList();
-        	
             List<ApplyVO> applist = listDAO.getApplyList();
             List<UserVO> userlist = listDAO.getUserList();
             
-            mav.setViewName("/WEB-INF/menu/listinfopage.jsp");
+            mav.setViewName("/WEB-INF/info/adminInfo.jsp");
             mav.addObject("teamList", teamlist);
             mav.addObject("userList", userlist);
             mav.addObject("appList", applist);

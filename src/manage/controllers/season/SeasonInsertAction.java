@@ -31,7 +31,7 @@ public class SeasonInsertAction extends AbstractController {
 		try {
 			seasonManageDAO.insertSeason(seasonVO);
 			mav.addObject("msg", "시즌 등록");
-			mav.addObject("url", "../admin/season#season");
+			mav.addObject("url", "../admin/season");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "시즌 등록 실패");

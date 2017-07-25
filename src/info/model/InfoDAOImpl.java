@@ -6,6 +6,7 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import ibatis.QueryHandler;
 
 import dandb.ApplyVO;
+import dandb.DuescheckVO;
 import dandb.GenreVO;
 import dandb.GradeVO;
 import dandb.ProjectVO;
@@ -74,6 +75,13 @@ public class InfoDAOImpl implements InfoDAO{
 		SqlMapClient sqlMap = QueryHandler.getInstance();
 		return (ProjectVO) sqlMap.queryForObject("info.getProjectDetail", projectNo);
 	}
+	
+	@Override
+	public List<DuescheckVO> getDuesCheckList() throws Exception {
+		SqlMapClient sqlMap = QueryHandler.getInstance();
+		return sqlMap.queryForList("info.getDuesCheckList");
+	}
+	
 	
 	@Override
 	public List<ApplyVO> getApplyList() throws Exception {

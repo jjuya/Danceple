@@ -31,7 +31,7 @@ public class ProjectUpdateAction extends AbstractController {
 		try {
 			projectManageDAO.updateProject(projectVO);
 			mav.addObject("msg", "프로젝트 수정 성공");
-			mav.addObject("url", "../admin/season#project");
+			mav.addObject("url", "../admin/project");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "프로젝트 수정 실패");

@@ -29,7 +29,7 @@ public class GenreUpdateAction extends AbstractController {
 		try {
 			genreManageDAO .updateGenre(genreVO);
 			mav.addObject("msg", "장르 수정 성공");
-			mav.addObject("url", "../admin/basic#genre");
+			mav.addObject("url", "../admin/genre");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "장르 수정 실패");

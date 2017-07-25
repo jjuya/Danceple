@@ -35,7 +35,7 @@ public class SeasonUpdateAction extends AbstractController {
 		try {
 			seasonManageDAO .updateSeason(seasonVO);
 			mav.addObject("msg", "시즌 수정 성공");
-			mav.addObject("url", "../admin/season#season");
+			mav.addObject("url", "../admin/season");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "시즌 수정 실패");

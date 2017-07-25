@@ -22,7 +22,7 @@ public class ProjectDeleteAction extends AbstractController {
 			
 			projectManageDAO.deleteProject(projectNo);
 			mav.addObject("msg", "프로젝트 삭제");
-			mav.addObject("url", "../admin/season#project");
+			mav.addObject("url", "../admin/project");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("msg", "프로젝트 삭제 실패");

@@ -34,7 +34,7 @@ public class ProjectDelete extends AbstractController{
 			ModelAndView mav = new ModelAndView("/WEB-INF/views/result.jsp");
 			
 			mav.addObject("msg", e.getMessage());
-			mav.addObject("url", "../admin/season#project");
+			mav.addObject("url", "../admin/project");
 			
 			return mav;
 		}

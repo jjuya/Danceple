@@ -53,7 +53,6 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<form action="testLogin.jsp" method="post" name="frm" class="form-signin">
-							<h2 class="form-signin-heading">Please login</h2>
 							<div class="col-lg-12">
 								<input type="text" name="user_id" id="user_id" value="${userid}" class="form-control" placeholder="ID" required="required" autofocus="autofocus" />
 							</div>

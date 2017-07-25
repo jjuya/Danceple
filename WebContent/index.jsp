@@ -1,150 +1,129 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="context" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html>
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>Danceple - Template</title>
-    
-    <!-- Bootstrap Core CSS -->
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+<title>Danceple - Template</title>
 
-    <!-- Custom CSS -->
-    <link href="<c:url value="/resources/css/sb-admin.css" />" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="${context}/resources/css/bootstrap.css" rel="stylesheet">
+<!--external css-->
+<link href="${context}/resources/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="${context}/resources/css/zabuto_calendar.css">
+<link rel="stylesheet" type="text/css" href="${context}/resources/js/gritter/css/jquery.gritter.css" />
+<link rel="stylesheet" type="text/css" href="${context}/resources/lineicons/style.css">
 
-    <!-- Morris Charts CSS -->
-    <link href="<c:url value="/resources/css/plugins/morris.css" />" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="<c:url value="/resources/font-awesome/css/font-awesome.min.css" />" rel="stylesheet" type="text/css">
-    
-    <!-- jQuery -->
-    <script src="<c:url value="/resources/js/jquery.js" />"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-
-	<!-- Morris Charts JavaScript -->
-	<script src="<c:url value="/resources/js//plugins/morris/raphael.min.js" />"></script>
-	<script src="<c:url value="/resources/js//plugins/morris/morris.min.js" />"></script>
-	<script src="<c:url value="/resources/js//plugins/morris/morris-data.js"/>"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!-- Custom styles for this template -->
+<link href="${context}/resources/css/style.css" rel="stylesheet">
+<link href="${context}/resources/css/style-responsive.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <div id="wrapper">
+	<section id="container">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.jsp">Danceple</a>
-            </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </li>
-                
-            </ul>
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
-                    <li>
-                        <a href="<c:url value="/info/menu" />"><i class="fa fa-fw fa-edit"></i> 신청 현황</a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="/admin/menu" />"><i class="fa fa-fw fa-edit"></i> 관리자 페이지</a>
-					</li>
-					<li>
-                        <a href="<c:url value="/user/menu" />"><i class="fa fa-fw fa-edit"></i> 유저 페이지</a>
-					</li>
-                    <li>
-                        <a href="apply/insertApply"><i class="fa fa-fw fa-edit"></i> Apply Page(현정)</a>
-                    </li>
-                    <li>
-                        <a href="member/menu"><i class="fa fa-fw fa-edit"></i> Member Page(민철)</a>
-                        <ul id="team" class="collapse in" aria-expanded="true">
-							<li><a href="member/login">로그인</a></li>
-							<li><a href="member/memberInsert">회원가입</a></li>
-						</ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
+		<!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+		<!--header start-->
 
-        <div id="page-wrapper">
+		<header class="header black-bg">
+			<div class="sidebar-toggle-box">
+				<div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+			</div>
+			<!--logo start-->
+			<a href="${context}/index.jsp" class="logo"><b>DANCEPEL</b></a>
+			<!--logo end-->
+			<div class="nav notify-row" id="top_menu">
 
-            <div class="container-fluid">
+				<div class="top-menu">
+					<ul class="nav pull-right top-menu">
+						<li><a class="logout" href="${context}/logout">Logout</a></li>
+					</ul>
+				</div>
+		</header>
 
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Blank Page
-                            <small>Subheading</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- /.row -->
-                
-                <div class="row">
-                </div>
+		<!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+		<!--sidebar start-->
+		<aside>
+			<div id="sidebar" class="nav-collapse ">
+				<!-- sidebar menu start-->
+				<ul class="sidebar-menu" id="nav-accordion">
 
-            </div>
-            <!-- /.container-fluid -->
+					<p class="centered">
+						<a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a>
+					</p>
+					<h5 class="centered">Marcel Newman</h5>
 
-        </div>
-        <!-- /#page-wrapper -->
+					<li class="mt"><a href="${context}/info/menu"> <i
+							class="fa fa-desktop"></i> <span>신청현황</span>
+					</a></li>
 
-    </div>
-    <!-- /#wrapper -->
+					<li class="mt"><a href="${context}/admin/menu"> <i
+							class="fa fa-desktop"></i> <span>관리자 메뉴</span>
+					</a></li>
+
+					<li class="mt"><a href="${context}/user/menu"> <i
+							class="fa fa-desktop"></i> <span>회원 메뉴</span>
+					</a></li>
+
+					<li class="mt"><a href="${context}/apply/insertApply"> <i
+							class="fa fa-desktop"></i> <span>신청 페이지</span>
+					</a></li>
+
+					<li class="sub-menu"><a href="javascript:;"> <i
+							class="fa fa-cogs"></i> <span>민철</span>
+					</a>
+						<ul class="sub">
+							<li><a href="${context}/login">Calendar</a></li>
+							<li><a href="${context}/member/memberInsert">Gallery</a></li>
+						</ul></li>
+
+				</ul>
+				<!-- sidebar menu end-->
+			</div>
+		</aside>
+		<!--sidebar end-->
+
+
+
+		<section id="main-content">
+			<section class="wrapper">
+				<div class="row"></div>
+			</section>
+		</section>
+	</section>
+
+	<!-- js placed at the end of the document so the pages load faster -->
+	<script src="${context}/resources/js/jquery.js"></script>
+	<script src="${context}/resources/js/jquery-3.2.1.js"></script>
+	<script src="${context}/resources/js/bootstrap.min.js"></script>
+	<script class="include" type="text/javascript" src="${context}/resources/js/jquery.dcjqaccordion.2.7.js"></script>
+	<script src="${context}/resources/js/jquery.scrollTo.min.js"></script>
+	<script src="${context}/resources/js/jquery.nicescroll.js" type="text/javascript"></script>
+	<script src="${context}/resources/js/jquery.sparkline.js"></script>
+
+	<!--common script for all pages-->
+	<script src="${context}/resources/js/common-scripts.js"></script>
+
+	<script type="text/javascript" src="${context}/resources/js/gritter/js/jquery.gritter.js"></script>
+	<script type="text/javascript" src="${context}/resources/js/gritter-conf.js"></script>
+
+
 </body>
 
 </html>

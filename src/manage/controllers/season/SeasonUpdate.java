@@ -41,7 +41,7 @@ public class SeasonUpdate extends AbstractController{
 			mav = new ModelAndView("/WEB-INF/views/result.jsp");
 
 			mav.addObject("msg", e.getMessage());
-			mav.addObject("url", "../admin/season#season");
+			mav.addObject("url", "../admin/season");
 			
 			return mav;
 		}
