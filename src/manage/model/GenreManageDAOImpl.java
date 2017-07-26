@@ -13,12 +13,7 @@ import ibatis.QueryHandler;
 public class GenreManageDAOImpl implements GenreManageDAO {
 
 	private static GenreManageDAOImpl genreManageDAO = null;
-	private ConnectDAOImpl connectDAOImpl = null;
-		
-	private GenreManageDAOImpl() {
-		connectDAOImpl = ConnectDAOImpl.getInstance();
-	} //end constructor
-
+	
 	public static GenreManageDAOImpl getInstance() {
 		
 		if (genreManageDAO == null) {

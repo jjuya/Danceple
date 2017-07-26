@@ -10,12 +10,7 @@ import ibatis.QueryHandler;
 public class SeasonManageDAOImpl implements SeasonManageDAO {
 
 	private static SeasonManageDAOImpl seasonManageDAO = null;
-	private ConnectDAOImpl connectDAOImpl = null;
-		
-	private SeasonManageDAOImpl() {
-		connectDAOImpl = ConnectDAOImpl.getInstance();
-	} //end constructor
-
+	
 	public static SeasonManageDAOImpl getInstance() {
 		
 		if (seasonManageDAO  == null) {

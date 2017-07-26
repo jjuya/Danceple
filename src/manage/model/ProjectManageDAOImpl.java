@@ -9,12 +9,7 @@ import ibatis.QueryHandler;
 public class ProjectManageDAOImpl implements ProjectManageDAO {
 
 	private static ProjectManageDAOImpl projectManageDAO = null;
-	private ConnectDAOImpl connectDAOImpl = null;
-		
-	private ProjectManageDAOImpl() {
-		connectDAOImpl = ConnectDAOImpl.getInstance();
-	} //end constructor
-
+	
 	public static ProjectManageDAOImpl getInstance() {
 		
 		if (projectManageDAO  == null) {

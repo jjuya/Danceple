@@ -13,12 +13,7 @@ import ibatis.QueryHandler;
 public class TeacherManageDAOImpl implements TeacherManageDAO {
 
 	private static TeacherManageDAOImpl teacherManageDAO = null;
-	private ConnectDAOImpl connectDAOImpl = null;
-
-	private TeacherManageDAOImpl() {
-		connectDAOImpl = ConnectDAOImpl.getInstance();
-	} //end constructor
-
+	
 	public static TeacherManageDAOImpl getInstance() {
 
 		if (teacherManageDAO == null) {

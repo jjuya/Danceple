@@ -13,12 +13,7 @@ import ibatis.QueryHandler;
 public class TeamManageDAOImpl implements TeamManageDAO {
 	
 	private static TeamManageDAOImpl teamManageDAO = null;
-	private ConnectDAOImpl connectDAOImpl = null;
 	
-	private TeamManageDAOImpl() {
-		connectDAOImpl = ConnectDAOImpl.getInstance();	
-	} //end constructor
-
 	public static TeamManageDAOImpl getInstance() {
 		
 		if (teamManageDAO == null) {

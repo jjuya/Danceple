@@ -13,12 +13,7 @@ import ibatis.QueryHandler;
 public class GradeManageDAOImpl implements GradeManageDAO {
 
 	private static GradeManageDAOImpl gradeManageDAO = null;
-	private ConnectDAOImpl connectDAOImpl = null;
-		
-	private GradeManageDAOImpl() {
-		connectDAOImpl = ConnectDAOImpl.getInstance();
-	} //end constructor
-
+	
 	public static GradeManageDAOImpl getInstance() {
 		
 		if (gradeManageDAO == null) {

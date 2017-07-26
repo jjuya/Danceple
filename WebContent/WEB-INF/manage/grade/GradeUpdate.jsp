@@ -45,8 +45,7 @@
 			<!--logo start-->
 			<a href="${context}/index.jsp" class="logo"><b>DANCEPEL</b></a>
 			<!--logo end-->
-			<div class="nav notify-row" id="top_menu">
-
+			
 				<div class="top-menu">
 					<ul class="nav pull-right top-menu">
 						<li><a class="logout" href="${context}/logout">Logout</a></li>
