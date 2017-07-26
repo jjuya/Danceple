@@ -36,7 +36,7 @@ public class AuthFilter implements Filter {
       UserVO loginUser = (UserVO) session.getAttribute("loginUser");
       if (loginUser == null) {   // 로그인을 하지 않음...
          request.setAttribute("msg", "먼저 로그인하세요");
-         request.setAttribute("url", "login");
+         request.setAttribute("url", "../login");
          RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/result.jsp");
          dispatcher.forward(request, response);
          return;

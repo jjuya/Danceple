@@ -40,7 +40,7 @@ public class MemberInsertAction extends AbstractController{
 		
 		MemberDAO memberDAO = MemberDAOImpl.getInstance();
 		
-		ModelAndView mav= new ModelAndView("/WEB-INF/member/result.jsp");
+		ModelAndView mav= new ModelAndView("/WEB-INF/views/result.jsp");
 		
 		try{
 			memberDAO.insertMember(memberVO);

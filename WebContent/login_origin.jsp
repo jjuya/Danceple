@@ -16,10 +16,10 @@
 <title>로그인</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="${context}/resources/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="../css/full-width-pics.css" rel="stylesheet">
+<link href="${context}/resources/css/full-width-pics.css" rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,10 +47,10 @@
 						<form action="${context}/member/loginAction" method="post" name="frm" class="form-signin">
 							<h2 class="form-signin-heading">Please login</h2>
 							<div class="col-lg-12">
-								<input type="text" name="userId" id="user_id" value="${userid}" class="form-control" placeholder="ID" required="required" autofocus="autofocus" />
+								<input type="text" name="userId" id="userId" value="${userid}" class="form-control" placeholder="ID" required="required" autofocus="autofocus" />
 							</div>
 							<div class="col-lg-12">
-								<input type="password" name="userPwd" id="user_pw" class="form-control"	placeholder="Password" required="required" /> 
+								<input type="password" name="userPwd" id="userPwd" class="form-control"	placeholder="Password" required="required" /> 
 							</div>
 							<div class="col-lg-12">
 								<label class="checkbox">

@@ -90,6 +90,17 @@ a, a:hover, a:focus {
 }
 /*Theme Buttons*/
 
+.btn-custom {
+  color: #424a5d;
+  background-color: #ffd777;
+}
+
+.btn-custom-gray {
+  color: #fff;
+  background-color: #424a5d;
+}
+
+
 .btn-theme {
   color: #fff;
   background-color: #68dff0;
@@ -1936,7 +1947,7 @@ label {
 	margin: 0;
 	padding: 25px 20px;
 	text-align: center;
-	background: #68dff0;
+	background: #424a5d;
 	border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 	color: #fff;

@@ -253,7 +253,7 @@ if(f.memberPwd.value != f.memberPwdchk.value)
 				<div class="row">
 					<div class="col-lg-7">
 						<div class="col-lg-12">
-							<form action="memberInsertAction" method="post" name="frm">
+							<form action="member/memberInsertAction" method="post" name="frm">
 								<div class="form-group">
 									<div class="col-lg-2">
 										<label>아이디</label> 
@@ -267,7 +267,6 @@ if(f.memberPwd.value != f.memberPwdchk.value)
 									<input type="button" id="check_id" value="아이디 중복 체크" onClick="winOpen()" />
 									<span id="check_id_result"></span>
 									</div>
-									</br>
 									<p class="help-block">
 										아이디는 영문,숫자 조합으로 하셔야 합니다.[4자리이상 12자리이하]<br> 아이디는 소문자로 저장
 										됩니다.
@@ -430,13 +429,7 @@ if(f.memberPwd.value != f.memberPwdchk.value)
 		</div>
 		<!-- /#page-wrapper -->
 
-	</div>
-	<!-- /#wrapper -->
-
-	<input type="button" value="등록" onclick="memChk()">
-
-
-
+	
 	<!-- jQuery -->
 	<script src="../js/jquery.js"></script>
 
