@@ -1,60 +1,79 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-
+<script src="<c:url value="/resources/js/jquery-3.2.1.js" />"></script>
+<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 <title>Danceple - Template</title>
 
 <link rel="Shortcut icon" href="/favicon.ico" />
 
-	<!-- Bootstrap Core CSS -->
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="<c:url value="/resources/css/sb-admin.css" />" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="../css/sb-admin.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="<c:url value="/resources/css/plugins/morris.css" />" rel="stylesheet">
+<!-- Morris Charts CSS -->
+<link href="../css/plugins/morris.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="<c:url value="/resources/font-awesome/css/font-awesome.min.css" />" rel="stylesheet" type="text/css">
-    
-    <!-- jQuery -->
-    <script src="<c:url value="/resources/js/jquery.js" />"></script>
+<!-- Custom Fonts -->
+<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-
-	<!-- Morris Charts JavaScript -->
-	<script src="<c:url value="/resources/js//plugins/morris/raphael.min.js" />"></script>
-	<script src="<c:url value="/resources/js//plugins/morris/morris.min.js" />"></script>
-	<script src="<c:url value="/resources/js//plugins/morris/morris-data.js"/>"></script>
-
-<script>
+<script  type="text/javascript">
  // 아이디 검색창 띄우기
 function winOpen(){
-  window.open("checkId.jsp","w","width=300, height=100, resizable=yes");
-  /* 속성에 빈칸으로 구분했으면 계속 빈칸, 콤마로 구분했으면 계속 콤마
- // 1. 새창에 표시될 파일명
- // 2. 창이름: 없을 때도 "" 따옴표는 해줘야한다.
-  // 이름이 없다면 팝업창이 계속 열린다. 이름이라는 것이 
- // 중복으로 띄움을 방지하도록 체크하는 역할
- // 3. 속성 width: 창너비, height: 창높이
-      location: 주소표시줄, menubar: 메뉴표시
-      resizable : 창의 크기조절여부
-      scrollbars : 스크롤바 표시여부
-      toolbar : 툴바표시여부
- // 속성은 yes / no 로 표시
- */
+	$(document).ready(function(){
+		var idchecked = -1;	// -1:확인요망, 1:id존재함, 0:사용가능
+		
+		$('#memberId').change(function(){	// 아이디 중복 체크 메시지
+			idcheck = -1;
+			$('#check_id_result').html('아이디 중복체크를 하세요');
+		});
+		
+		$('#check_id').click(function(){	// 아이디 중복 체크 처리
+			var memberId = $('#memberId').val().trim();
+		
+			if (memberId === '') {
+				alert('체크할 아이디를 입력하세요');
+				$('#user_id').focus();
+				return;
+			}
+			
+			$.getJSON('checkID',{"memberId":memberId},
+				function(data){
+					console.log(data);
+					console.log('id  : ' + data.id);
+					console.log('cnt : ' + data.cnt);
+					console.log('msg : ' + data.msg);
+					$('#check_id_result').html(data.msg);
+					idchecked = 0;
+				}		
+			);
+		});
+		
+		$('#regist_form').bind('submit',function(){	// 회원가입 완료 처리
+			if ($('#memberId').val().length === 0) {
+				alert('가입할 아이디를 입력하세요');
+				$('#user_id').focus();
+				return false;
+			}
+			//idchecked = 0 인지 확인
+			//이름, 비밀번호 비어있는지 확인...
+			$('#regist_form').attr('action', 'registAction')
+			                 .attr('method', 'POST');
+			$('#regist_form').submit();	
+		});
+	});
  }
   </script>
 
@@ -83,20 +102,21 @@ function winOpen(){
     f.memberPwd.focus();
     return false;
    }
-/*    if(f.memberPwdChk.value == "")
+  if(f.memberPwdchk.value == "")
    {
     alert("비밀번호를 다시한번 입력해주세요")
     f.memberPwdChk.focus();
     return false;
-   } */
- /*   if(f.memberPwd.value != f.memPwdChk.value) 
+   } 
+if(f.memberPwd.value != f.memberPwdchk.value) 
    {
     alert("비밀번호가 다릅니다.");
     f.memberPwd.value = ""; 
     f.memberPwdChk.value = ""; 
     f.memberPwd.focus(); 
     return false;
-   } */
+   } 
+   
    if(f.memberName.value == "")
    {
     alert("이름이 없는건가..") 
@@ -141,12 +161,13 @@ function winOpen(){
     f.memMobile03.focus();
     return false;
    }
-   /* if (document.frm.memHobby.value == "" )
-   {
-    alert("취미를 선택해주세요")
-    return false;
-   } 체크박스값 체크여부 확인방법?? */
 
+		   if (f.imgUrl.value == "")
+				   {
+				    alert("사진을 등록하세요")
+				    f.imgUrl.focus();
+				    return false;
+				   }
   f.submit(); // 버튼으로 쓸 땐 return true; 대신 이걸 쓰고 form시작 구문에 onsubmit="return memChk()" 는 불필요하여 삭제
 
  } 
@@ -243,9 +264,10 @@ function winOpen(){
 									</div>
 									
 									<div class="col-lg-2">
-										<input type="button" value="ID중복검사" onClick="winOpen()" class="btn btn-secondary"><br>
+									<input type="button" id="check_id" value="아이디 중복 체크" onClick="winOpen()" />
+									<span id="check_id_result"></span>
 									</div>
-									
+									</br>
 									<p class="help-block">
 										아이디는 영문,숫자 조합으로 하셔야 합니다.[4자리이상 12자리이하]<br> 아이디는 소문자로 저장
 										됩니다.
@@ -351,6 +373,16 @@ function winOpen(){
 
 								<div class="form-group" >
 									<div class="col-lg-2">
+										<label>사진 업로드</label>
+									</div>
+									<div class="col-lg-10">
+									  <input name= "imgUrl" type = "file" >
+									</div>
+								</div>
+								</div>
+
+								<div class="form-group" >
+									<div class="col-lg-2">
 										<label>자기소개</label>
 									</div>
 									<div class="col-lg-10">
@@ -400,5 +432,21 @@ function winOpen(){
 
 	</div>
 	<!-- /#wrapper -->
+
+	<input type="button" value="등록" onclick="memChk()">
+
+
+
+	<!-- jQuery -->
+	<script src="../js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+
+	<!-- Morris Charts JavaScript -->
+	<script src="../js/plugins/morris/raphael.min.js"></script>
+	<script src="../js/plugins/morris/morris.min.js"></script>
+	<script src="../js/plugins/morris/morris-data.js"></script>
+
 </body>
 </html>

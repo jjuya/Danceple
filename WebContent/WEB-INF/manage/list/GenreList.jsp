@@ -107,7 +107,7 @@
 					<div class="col-md-12">
 						<div class="content-panel">
 							<h4><i class="fa fa-angle-right"></i> 장르 목록
-								<a href="${context}/manage/genreInsert"class="btn btn-default"><i class="fa fa-pencil"></i> Add</a>
+								<a href="${context}/admin/genreInsert"class="btn btn-default"><i class="fa fa-pencil"></i> Add</a>
 							</h4>
 							<table class="table">
 								<thead>
@@ -125,8 +125,8 @@
 											<td>${genre.genreName}</td>
 											<td>${genre.genreUrl}</td>
 											<td>
-												<a href="${context}/manage/genreUpdate?genreId=${genre.genreId}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> 
-												<a href="${context}/manage/genreDelete?genreId=${genre.genreId}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
+												<a href="${context}/admin/genreUpdate?genreId=${genre.genreId}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> 
+												<a href="${context}/admin/genreDelete?genreId=${genre.genreId}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
 											</td>
 										</tr>
 									</c:forEach>

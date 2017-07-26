@@ -108,7 +108,7 @@
 						<div class="content-panel">
 							
 							<h4><i class="fa fa-angle-right"></i> 팀 목록
-								<a href="${context}/manage/teamInsert"class="btn btn-default"><i class="fa fa-pencil"></i> Add</a>
+								<a href="${context}/admin/teamInsert"class="btn btn-default"><i class="fa fa-pencil"></i> Add</a>
 							</h4>
 							
 							<table class="table">
@@ -135,8 +135,8 @@
 											<td>${team.preTime}</td>
 											<td>${team.teamUrl}</td>
 											<td>
-												<a href="${context}/manage/teamUpdate?teamId=${team.teamId}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> 
-												<a href="${context}/manage/teamDelete?teamId=${team.teamId}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
+												<a href="${context}/admin/teamUpdate?teamId=${team.teamId}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> 
+												<a href="${context}/admin/teamDelete?teamId=${team.teamId}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
 											</td>
 										</tr>
 									</c:forEach>

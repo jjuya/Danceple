@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="user">
+	<typeAlias alias="UserVO" type="dandb.UserVO"/>
+	
+	<select id="userCheck" parameterClass="String" resultClass="String">
+	select userpwd
+	from tb_user 
+	where userId=#userId#
+	</select>
+	
+	<select id="getUser" parameterClass="String" resultClass="UserVO">
+	select *
+	from tb_user 
+	where userId=#userId#
+	</select>
+	
+	<insert id="insertUser" parameterClass="UserVO">
+	INSERT INTO tb_user
+	VALUES(#userId#, #userName#,  #phone#, #email#,  '1', #userPwd#, #gender#, 0, #birthday#, #imgUrl#)
+	</insert>
+	
+	
+	<!-- 현정 -->
+	<select id="userConfirm" parameterClass="UserVO" resultClass="UserVO">
+	SELECT userId,userPwd
+	FROM tb_user
+	WHERE userId=#userId# AND userPwd=#userPwd#
+	</select>
+	
+	<select id="pageIn" parameterClass="UserVO" resultClass="UserVO">
+	SELECT userId, userName, phone, email, imgUrl
+	FROM tb_user
+	WHERE userId=#userId#
+	</select>
+	
+     <update id="userUpdate" parameterClass="UserVO">
+	  UPDATE tb_user SET
+		  userPwd=#userPwd#
+	      ,phone=#phone#
+	      ,email=#email#
+	      ,imgUrl=#imgUrl#
+	  WHERE userId=#userId#
+	 </update>
+	
+	
+	<delete id="userDelete" parameterClass="String">
+	DELETE FROM tb_user 
+	WHERE userId=#userId#
+	</delete>
+	
+	
+</sqlMap>

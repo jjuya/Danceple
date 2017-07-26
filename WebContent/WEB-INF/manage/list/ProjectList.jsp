@@ -108,7 +108,7 @@
 					<div class="col-md-12">
 						<div class="content-panel">
 							<h4><i class="fa fa-angle-right"></i> 프로젝트 목록
-								<a href="${context}/manage/projectInsert"class="btn btn-default"><i class="fa fa-pencil"></i> Add</a>
+								<a href="${context}/admin/projectInsert"class="btn btn-default"><i class="fa fa-pencil"></i> Add</a>
 							</h4>
 							<table class="table">
 								<thead>
@@ -131,8 +131,8 @@
 											</td>
 											<td>${project.projectDesc}</td>
 											<td>
-												<a href="${context}/manage/projectUpdate?projectNo=${project.projectNo}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> 
-												<a href="${context}/manage/projectDelete?projectNo=${project.projectNo}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
+												<a href="${context}/admin/projectUpdate?projectNo=${project.projectNo}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> 
+												<a href="${context}/admin/projectDelete?projectNo=${project.projectNo}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
 											</td>
 										</tr>
 									</c:forEach>

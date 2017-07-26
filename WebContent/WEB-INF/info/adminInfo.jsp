@@ -134,7 +134,7 @@
 										<tr>
 											<td>${user.userId}</td>
 											<td>${user.userName}</td>
-											<td>${user.userPhone}</td>
+											<td>${user.phone}</td>
 											<td>${user.gender}</td>
 											<td>${user.gradeId}</td>
 										</tr>

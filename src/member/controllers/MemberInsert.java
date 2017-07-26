@@ -11,7 +11,7 @@ public class MemberInsert extends AbstractController{
 	@Override
 	public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) {
 	
-		return new ModelAndView("/WEB-INF/member/userlist.jsp");
+		return new ModelAndView("/WEB-INF/member/userJoin.jsp");
 	}
 
 }

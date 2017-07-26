@@ -107,7 +107,7 @@
 					<div class="col-md-12">
 						<div class="content-panel">
 							<h4><i class="fa fa-angle-right"></i> 등급 목록
-								<a href="${context}/manage/gradeInsert"class="btn btn-default"><i class="fa fa-pencil"></i> Add</a>
+								<a href="${context}/admin/gradeInsert"class="btn btn-default"><i class="fa fa-pencil"></i> Add</a>
 							</h4>
 							<table class="table">
 								<thead>
@@ -123,8 +123,8 @@
 											<td>${grade.gradeId}</td>
 											<td>${grade.gradeName}</td>
 											<td>
-												<a href="${context}/manage/gradeUpdate?gradeId=${grade.gradeId}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> 
-												<a href="${context}/manage/gradeDelete?gradeId=${grade.gradeId}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
+												<a href="${context}/admin/gradeUpdate?gradeId=${grade.gradeId}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a> 
+												<a href="${context}/admin/gradeDelete?gradeId=${grade.gradeId}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
 											</td>
 										</tr>
 									</c:forEach>

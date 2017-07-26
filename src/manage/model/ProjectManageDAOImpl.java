@@ -2,7 +2,6 @@ package manage.model;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
-import basic.model.ConnectDAOImpl;
 import dandb.ProjectVO;
 import ibatis.QueryHandler;
 

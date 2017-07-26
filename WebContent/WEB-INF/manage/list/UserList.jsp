@@ -146,7 +146,7 @@
 												</select>
 											</td>
 											<td>
-												<a href="${context}/manage/userGradeUpdate?userId=${user.userId}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+												<a href="${context}/admin/userGradeUpdate?userId=${user.userId}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
 											</td>
 										</tr>
 									</c:forEach>

@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 
-import basic.model.ConnectDAOImpl;
 import dandb.TeamVO;
 import ibatis.QueryHandler;
 

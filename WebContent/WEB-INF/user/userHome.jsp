@@ -74,7 +74,7 @@
 							class="fa fa-desktop"></i> <span>신청</span>
 					</a></li>
 					
-					<li class="mt"><a href="${context}/member/confirmUser"> <i
+					<li class="mt"><a href="${context}/user/confirmUser"> <i
 							class="fa fa-desktop"></i> <span>마이페이지</span>
 					</a></li>
 
@@ -89,7 +89,7 @@
 		<section class="wrapper site-min-heigth">
 			<h3><i class="fa fa-angle-right"></i> 유저 페이지</h3>
 			<div class="row">
-				
+				<a href="confirmUser">마이페이지</a>
 			</div>
 		</section>
 	</section>

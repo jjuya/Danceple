@@ -27,12 +27,12 @@ public class ApplyDAOImpl implements ApplyDAO {
 		return applyDAO;
 	}
 
-/*	@Override
+	@Override
 	public void insertApply(ApplyVO applyVO) throws Exception {
 		SqlMapClient sqlMap = QueryHandler.getInstance();
 		sqlMap.insert("apply.insertApply", applyVO);
 
-	}*/
+	}
 
 	@Override
 	public List<TeamVO> getTeamList() throws Exception {
@@ -56,7 +56,32 @@ public class ApplyDAOImpl implements ApplyDAO {
         SqlMapClient sqlMap = QueryHandler.getInstance();
         return (UserVO) sqlMap.queryForObject("apply.getuser");
     }
-	
-	
+
+	@Override
+	public String getDay(String day) throws Exception {
+		SqlMapClient sqlMap = QueryHandler.getInstance();
+		return (String) sqlMap.queryForObject("apply.getday", day);
+	}
+
+	@Override
+	public UserVO userIn(String userId) throws Exception {
+		SqlMapClient sqlMap = QueryHandler.getInstance();
+		return (UserVO) sqlMap.queryForObject("apply.userIn", userId);
+	}
+
+	@Override
+	public TeamVO teamIn(String teamId) throws Exception {
+		SqlMapClient sqlMap = QueryHandler.getInstance();
+		return (TeamVO) sqlMap.queryForObject("apply.teamIn", teamId);
+	}
+
+	@Override
+	public GenreVO genreIn(String genreId) throws Exception {
+		SqlMapClient sqlMap = QueryHandler.getInstance();
+		return (GenreVO) sqlMap.queryForObject("apply.genreIn", genreId);
+	}
+
+
+    
 
 }

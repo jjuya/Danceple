@@ -97,18 +97,10 @@
 								<label class="col-lg-2 col-sm-2 control-label">팀 명</label>
 								
 								<div class="col-sm-10">
-									<select id="teamId" name="teamId" class="form-control">
-										<c:forEach items="${teamlist}" var="team">
-											<c:choose>
-												<c:when test="${team.teamId == page}">
-													<option value="${team.teamId}" selected="selected">${team.teamName}
-														| ${team.teamDay} | ${team.location} | ${team.mainTime}</option>
-												</c:when>
-												<c:otherwise>
-													<option value="${team.teamId}">${team.teamName}|
-														${team.teamDay} | ${team.location} | ${team.mainTime}</option>
-												</c:otherwise>
-											</c:choose>
+									<select id="teamList" name="teamList" required class="form-control">
+										<c:forEach items="${teamList}" var="team">
+											<option value="${team.teamId}" selected="selected">${team.teamName}|
+											 ${team.teamDay} | ${team.location} | ${team.mainTime}</option>
 										</c:forEach>
 									</select>
 								</div>
@@ -118,8 +110,8 @@
 								<label class="col-lg-2 col-sm-2 control-label">추 가</label>
 								
 								<div class="col-sm-10">
-									<input type="text" name="others" class="form-control" />
-									<p class="help-block">콤마(,)로 구분하여 작성하여 주시길 바랍니다.</p>
+									<input type="text" name="teamOther" class="form-control" />
+									<p class="help-block">팀명은 콤마(,)로 구분하여 작성하여 주시길 바랍니다.</p>
 								</div>
 							</div>
 
@@ -127,8 +119,8 @@
 								<label class="col-lg-2 col-sm-2 control-label">1지망</label>
 								
 								<div class="col-sm-10">
-									<select name="genrelist1" id="genrelist1" class="form-control">
-										<c:forEach var="genre" items="${genrelist}">
+									<select name="genreList1" id="genreList1" required class="form-control">
+										<c:forEach var="genre" items="${genreList}">
 											<option value="${genre.genreId}" selected="selected">${genre.genreName}</option>
 										</c:forEach>
 									</select>
@@ -139,8 +131,8 @@
 								<label class="col-lg-2 col-sm-2 control-label">2지망</label>
 								
 								<div class="col-sm-10">
-									<select name="genrelist2" id="genrelist2" class="form-control">
-										<c:forEach var="genre" items="${genrelist}">
+									<select name="genreList2" id="genreList2" required class="form-control">
+										<c:forEach var="genre" items="${genreList}">
 											<option value="${genre.genreId}" selected="selected">${genre.genreName}</option>
 										</c:forEach>
 									</select>
@@ -151,8 +143,8 @@
 								<label class="col-lg-2 col-sm-2 control-label">3지망</label>
 								
 								<div class="col-sm-10">
-									<select name="genrelist3" id="genrelist3" class="form-control">
-										<c:forEach var="genre" items="${genrelist}">
+									<select name="genreList3" id="genreList3" required class="form-control">
+										<c:forEach var="genre" items="${genreList}">
 											<option value="${genre.genreId}" selected="selected">${genre.genreName}</option>
 										</c:forEach>
 									</select>
@@ -188,98 +180,4 @@
 	
 </body>
 
-</html>
-
-
-		<div id="page-wrapper">
-
-			<div class="container-fluid">
-
-				<!-- Page Heading -->
-				<div class="row">
-					<div class="col-lg-12">
-						<h3 class="page-header">
-							<i class="glyphicon glyphicon-check"></i> 시즌 신청
-						</h3>
-					</div>
-				</div>
-				<!-- /.row -->
-
-				<!-- apply form -->
-				<div class="row">
-					<div class="col-lg-7">
-						<form action="insertApplyAction">
-
-							
-						</form>
-					</div>
-				</div>
-
-					<!--				
-	<form action="insertApplyAction">
-		<div class="applyform">
-			<label> <select id="teamlists" onchange="changepage(value)">
-					<option>팀명</option>
-					<c:forEach var="team" items="${teamlist}">
-						<c:choose>
-							<c:when test="${team.teamId == page}">
-								<option value="${team.teamId}" selected="selected">${team.teamName}</option>
-							</c:when>
-							<c:otherwise>
-								<option value="${team.teamId}">${team.teamName}</option>
-							</c:otherwise>
-						</c:choose>
-					</c:forEach>
-			</select>
-
-				<td>추가</td>
-				<td><input type="text" name="others" /></td>
-				<td>콤마(,)로 구분하여 작성하여 주시길 바랍니다.</td>
-			</label>
-		</div>
-		<div>
-
-			<p>장르</p>
-
-			<p>
-				1지망 
-				<select id="genrelist">
-					<c:forEach var="genre" items="${genrelist}">
-						<option value="${genre.genreId}" selected="selected">${genre.genreName}</option>
-					</c:forEach>
-				</select>
-			</p>
-
-			<p>
-				2지망 
-				<select id="genrelist">
-					<c:forEach var="genre" items="${genrelist}">
-						<option value="${genre.genreId}" selected="selected">${genre.genreName}</option>
-					</c:forEach>
-				</select>
-			</p>
-			<p>
-				3지망
-				<select id="genrelist">
-					<c:forEach var="genre" items="${genrelist}">
-						<option value="${genre.genreId}" selected="selected">${genre.genreName}</option>
-					</c:forEach>
-				</select>
-			</p>
-    </div>
-	<div id="clear">
-		<label> <input type="submit" value="완료" />
-		</label>
-	</div>
-</form>
--->
-				</div>
-				<!-- /.container-fluid -->
-
-			</div>
-			<!-- /#page-wrapper -->
-
-		</div>
-		<!-- /#wrapper -->
-</body>
 </html>

@@ -1,12 +1,7 @@
 package manage.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 import com.ibatis.sqlmap.client.SqlMapClient;
 
-import basic.model.ConnectDAOImpl;
 import dandb.GradeVO;
 import ibatis.QueryHandler;
 

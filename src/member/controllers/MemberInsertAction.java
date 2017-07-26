@@ -21,7 +21,8 @@ public class MemberInsertAction extends AbstractController{
 		String email =request.getParameter("email");
 		String gender =request.getParameter("gender");
 		String gradeId =request.getParameter("gradeId");
-		
+
+		String imgUrl = request.getParameter("imgUrl");
 		
 		UserVO memberVO= new UserVO();
 		memberVO.setUserId(memberId);
@@ -33,6 +34,9 @@ public class MemberInsertAction extends AbstractController{
 		memberVO.setGender(gender);
 		memberVO.setGradeId(gradeId);
 		
+		memberVO.setImgUrl(imgUrl);
+		
+		System.out.println(memberVO);
 		
 		MemberDAO memberDAO = MemberDAOImpl.getInstance();
 		

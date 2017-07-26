@@ -30,6 +30,8 @@
 	
 	<!-- apply -->
 	<sqlMap resource="ibatis/apply-mapping.xml"/>
+	
+	<sqlMap resource="ibatis/userManage-mapping.xml" />
 
 	<!-- List more here... <sqlMap resource="com/mydomain/data/Order.xml"/> 
 		<sqlMap resource="com/mydomain/data/Documents.xml"/> -->

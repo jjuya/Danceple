@@ -9,15 +9,23 @@
 	<typeAlias alias="TeamVO" type="dandb.TeamVO"/>
 	<typeAlias alias="GenreVO" type="dandb.GenreVO"/>
 	
-	<select id="getuser" resultClass="UserVO">
+	<select id="getday" parameterClass="string" resultClass="string">
+	SELECT
+	CASE WHEN d_day >= to_date(#day#, 'YYYY/MM/DD HH24:MI:SS') THEN 'true'
+	ELSE 'false'
+	END booo
+	from (SELECT to_date(to_char(SYSDATE, 'YYYY/MM/DD HH24:MI:SS'),'YYYY/MM/DD HH24:MI:SS') AS d_day
+		  FROM dual)
+	</select>
+	
+ 	<select id="getuser" resultClass="UserVO">
 	select * from tb_user where userId='123'
 	</select>
 	
-<!-- 	<insert id="insertApply" parameterClass="UserVO, ApplyVO">
-	INSERT INTO apply (memberId, teamId, genre1, genre2, genre3)");
-	VALUES(memberId, #ApplyVO.teamId#, #ApplyVO.genre1#, #ApplyVO.genre2# ,#ApplyVO.genre3#)");
-	WHERE memberName=#UserVO.memberName# AND phone=#UserVO.phone#
-	</insert> -->
+ 	<insert id="insertApply" parameterClass="ApplyVO">
+	INSERT INTO tb_apply (userId, teamId, genre1, genre2, genre3, seasonId, teamOther)
+	VALUES(#userId#, #teamId#, #genre1#, #genre2# , #genre3#, 1, #teamOther#)
+	</insert>
 	
 	<select id="getTeamList" resultClass="TeamVO">
 	select * from tb_team
@@ -27,5 +35,26 @@
 	select * from tb_genre
 	</select>
 	
+<!-- 	<select id="getSeasonList" resultClass="SeasonVO">
+	select * from tb_season
+	</select> -->
+	
+	<select id="userIn" parameterClass="String" resultClass="UserVO">
+	SELECT userId, userName, phone
+	FROM tb_user
+	WHERE userId=#userId#
+	</select>
+	
+	<select id="teamIn" parameterClass="String" resultClass="TeamVO">
+	SELECT teamName
+	FROM tb_team
+	WHERE teamId=#teamId#
+	</select>
+	
+	<select id="genreIn" parameterClass="String" resultClass="GenreVO">
+	SELECT genreName
+	FROM tb_genre
+	WHERE genreId=#genreId#
+	</select>
 	
 </sqlMap>

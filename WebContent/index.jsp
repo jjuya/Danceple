@@ -68,10 +68,6 @@
 					</p>
 					<h5 class="centered">Marcel Newman</h5>
 
-					<li class="mt"><a href="${context}/info/menu"> <i
-							class="fa fa-desktop"></i> <span>신청현황</span>
-					</a></li>
-
 					<li class="mt"><a href="${context}/admin/menu"> <i
 							class="fa fa-desktop"></i> <span>관리자 메뉴</span>
 					</a></li>
@@ -80,16 +76,13 @@
 							class="fa fa-desktop"></i> <span>회원 메뉴</span>
 					</a></li>
 
-					<li class="mt"><a href="${context}/apply/insertApply"> <i
-							class="fa fa-desktop"></i> <span>신청 페이지</span>
-					</a></li>
-
-					<li class="sub-menu"><a href="javascript:;"> <i
+					<li class=
+					"sub-menu"><a href="javascript:;"> <i
 							class="fa fa-cogs"></i> <span>민철</span>
 					</a>
 						<ul class="sub">
-							<li><a href="${context}/login">Calendar</a></li>
-							<li><a href="${context}/member/memberInsert">Gallery</a></li>
+							<li><a href="${context}/login">로그인</a></li>
+							<li><a href="${context}/member/memberInsert">회원가입</a></li>
 						</ul></li>
 
 				</ul>
