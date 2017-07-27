@@ -64,25 +64,21 @@
 				<ul class="sidebar-menu" id="nav-accordion">
 
 					<p class="centered">
-						<a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a>
+						<a href="profile.html"><img src="${context}/resources/img/ui-sam.jpg" class="img-circle" width="60"></a>
 					</p>
-					<h5 class="centered">Marcel Newman</h5>
+					<h5 class="centered">CRUWD</h5>
 
 					<li class="mt"><a href="${context}/admin/menu"> <i
-							class="fa fa-desktop"></i> <span>관리자 메뉴</span>
+							class="fa fa-desktop"></i> <span>프로젝트 개요</span>
 					</a></li>
-
-					<li class="mt"><a href="${context}/user/menu"> <i
-							class="fa fa-desktop"></i> <span>회원 메뉴</span>
-					</a></li>
-
-					<li class=
-					"sub-menu"><a href="javascript:;"> <i
-							class="fa fa-cogs"></i> <span>민철</span>
+					
+					<li class="sub-menu">
+					<a href="javascript:;"> 
+						<iclass="fa fa-cogs"></i> <span>개발</span>
 					</a>
 						<ul class="sub">
-							<li><a href="${context}/login">로그인</a></li>
-							<li><a href="${context}/member/memberInsert">회원가입</a></li>
+							<li><a href="${context}/login">개발 환경</a></li>
+							<li><a href="${context}/member/memberInsert">서비스 구조</a></li>
 						</ul></li>
 
 				</ul>

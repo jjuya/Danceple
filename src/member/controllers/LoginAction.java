@@ -39,12 +39,12 @@ public class LoginAction extends AbstractController{
 				HttpSession session=request.getSession();
 				session.setAttribute("loginUser",mVO);
 				
+				mav.addObject("msg","로그인 성공.");
+				
 				if(mVO.getGradeId().equals("0")) { //admin
-					mav.addObject("msg","로그인 성공.");
-					mav.addObject("url","../admin/menu");
+					mav.addObject("url","admin/menu");
 				} else { //일반 회원
-					mav.addObject("msg","로그인 성공.");
-					mav.addObject("url","../user/menu");
+					mav.addObject("url","user/menu");
 				}				
 				
 			}else {

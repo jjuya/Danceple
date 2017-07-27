@@ -10,7 +10,6 @@ public class UserVO {
 	private String email;
 	private String gender;
 	private String gradeId;
-	private String teamId;
 	private String imgUrl;
 	private int penalty;
 	
@@ -62,13 +61,6 @@ public class UserVO {
 	public void setGradeId(String gradeId) {
 		this.gradeId = gradeId;
 	}
-	public String getTeamId() {
-		return teamId;
-	}
-	public void setTeamId(String teamId) {
-		this.teamId = teamId;
-	}
-	
 	public String getImgUrl() {
 		return imgUrl;
 	}
@@ -85,7 +77,7 @@ public class UserVO {
 	public String toString() {
 		return "UserVO [userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName + ", phone=" + phone
 				+ ", birthday=" + birthday + ", email=" + email + ", gender=" + gender + ", gradeId=" + gradeId
-				+ ", teamId=" + teamId + ", imgUrl=" + imgUrl + ", penalty=" + penalty + "]";
+				+ ", imgUrl=" + imgUrl + ", penalty=" + penalty + "]";
 	}
 	
 	

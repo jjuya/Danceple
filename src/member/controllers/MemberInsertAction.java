@@ -45,7 +45,7 @@ public class MemberInsertAction extends AbstractController{
 		try{
 			memberDAO.insertMember(memberVO);
 			mav.addObject("msg","회원가입 성공.");
-			mav.addObject("url","login");
+			mav.addObject("url","../login");
 		}catch(Exception e){
 			e.printStackTrace();
 			mav.addObject("msg","회원가입 실패");

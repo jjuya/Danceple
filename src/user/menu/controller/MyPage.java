@@ -21,19 +21,20 @@ public class MyPage extends AbstractController{
 	public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) {
 		UserVO userVO = new UserVO();
 		ModelAndView mav = new ModelAndView("/WEB-INF/views/result.jsp");
+		
+		HttpSession session=request.getSession();
+		UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+		
 		MemberDAO memberDAO = MemberDAOImpl.getInstance();
-		HttpSession session = request.getSession();
-		String userId = (String) session.getAttribute("userId");
-		
-		logger.info(userId);
-		
-		userVO.setUserId(userId);
+				
+		userVO.setUserId(loginUser.getUserId());
 		
 		try {
 			UserVO pageIn = memberDAO.getpageIn(userVO);
 			mav.addObject("pageIn", pageIn);
 			mav.setViewName("/WEB-INF/user/mypage.jsp");
 		} catch(Exception e) {
+			e.printStackTrace();
 			mav.addObject("msg", "회원정보를 조회할 수 없습니다.");
 			mav.addObject("url", "javascript:history.back()");
 		}

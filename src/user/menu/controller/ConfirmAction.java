@@ -30,9 +30,8 @@ public class ConfirmAction extends AbstractController{
 		userVO.setUserId(userId);
 		userVO.setUserPwd(userPwd);
 		
-    	HttpSession session = request.getSession();
-    	session.setAttribute("userId", userId);
-    	
+		
+		
 		
 		try {
 			memberDAO.confirmAction(userVO);

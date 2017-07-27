@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="context" value="${pageContext.request.contextPath}" />
 	
 <!DOCTYPE html>
@@ -26,6 +25,9 @@
     <!-- Custom styles for this template -->
     <link href="${context}/resources/css/style.css" rel="stylesheet">
     <link href="${context}/resources/css/style-responsive.css" rel="stylesheet">
+    
+    <script src="${context}/resources/js/jquery-3.2.1.js"></script>
+    <script src="${context}/resources/js/bootstrap.min.js"></script>
 
 <script  type="text/javascript">
  // 아이디 검색창 띄우기
@@ -191,7 +193,7 @@ if(f.memberPwd.value != f.memberPwdchk.value)
 					<div class="col-sm-12">
 						<div class="form-panel">
 							<h4 class="mb"> * 표시 항목은 필수 입력 항목입니다.</h4>
-							<form action="member/memberInsertAction" method="post" class="form-horizontal style-form">
+							<form action="member/memberInsertAction" name="frm" method="post" class="form-horizontal style-form">
 								<div class="form-group">
 									<label class="col-sm-2 col-sm-2 control-label"> 아이디 </label>
 								
@@ -268,7 +270,7 @@ if(f.memberPwd.value != f.memberPwdchk.value)
 									<label class="col-sm-2 col-sm-2 control-label">핸드폰</label>
 									
 									<div class="col-sm-10">
-									
+										<div class="form-inline">
 										<select name="memMobile01" class="form-control">
 											<option value="010">010</option>
 											<option value="011">011</option>
@@ -286,6 +288,7 @@ if(f.memberPwd.value != f.memberPwdchk.value)
 
 										
 										<input type="hidden" name="phone" />
+									</div>
 									</div>
 								</div>
 								
@@ -322,12 +325,12 @@ if(f.memberPwd.value != f.memberPwdchk.value)
 								</div>
 								
 								<div class="form-group">
-									<span class="pull-right">
-										<div class="col-sm-12"> 
-											<input type="submit" value="등록" class="btn btn-custom-gray"/>
-											<input type="button" value="취소" onclick="memChk()" class="btn btn-default" />
-										</div>
-									</span>
+									<div class="col-sm-12"> 
+										<span class="pull-right">
+											<input type="button" value="등록" class="btn btn-custom-gray" onclick="memChk()"/>
+											<input type="reset" value="취소" class="btn btn-default" />
+										</span>
+									</div>
 								</div>
 								
 							</form>
@@ -346,6 +349,16 @@ if(f.memberPwd.value != f.memberPwdchk.value)
     <script src="${context}/resources/js/jquery.scrollTo.min.js"></script>
     <script src="${context}/resources/js/jquery.nicescroll.js" type="text/javascript"></script>
 
+
+	<script type="text/javascript" src="${context}/resources/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="${context}/resources/js/bootstrap-daterangepicker/date.js"></script>
+	<script type="text/javascript" src="${context}/resources/js/bootstrap-daterangepicker/daterangepicker.js"></script>
+	
+	<script type="text/javascript" src="${context}/resources/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+	
+	
+	<script src="${context}/resources/js/form-component.js"></script>    
+    
 
     <!--common script for all pages-->
     <script src="${context}/resources/js/common-scripts.js"></script>

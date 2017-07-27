@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="context" value="${pageContext.request.contextPath}" />
@@ -12,16 +11,16 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
+    <title>DANCEPLE</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="${context}/resources/css/bootstrap.css" rel="stylesheet">
+    <link href="${context}/resources/css/bootstrap.css" rel="stylesheet" />
     <!--external css-->
     <link href="${context}/resources/font-awesome/css/font-awesome.css" rel="stylesheet" />
         
     <!-- Custom styles for this template -->
-    <link href="${context}/resources/css/style.css" rel="stylesheet">
-    <link href="${context}/resources/css/style-responsive.css" rel="stylesheet">
+    <link href="${context}/resources/css/style.css" rel="stylesheet" />
+    <link href="${context}/resources/css/style-responsive.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -70,30 +69,7 @@
 		                </span>
 		            </div>
 		
-		        </div>
-		
-		          <!-- Modal -->
-		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-		              <div class="modal-dialog">
-		                  <div class="modal-content">
-		                      <div class="modal-header">
-		                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		                          <h4 class="modal-title">Forgot Password ?</h4>
-		                      </div>
-		                      <div class="modal-body">
-		                          <p>Enter your e-mail address below to reset your password.</p>
-		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
-		
-		                      </div>
-		                      <div class="modal-footer">
-		                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-		                          <button class="btn btn-theme" type="button">Submit</button>
-		                      </div>
-		                  </div>
-		              </div>
-		          </div>
-		          <!-- modal -->
-		
+		        </div>		
 		      </form>	  	
 	  		</c:if>
 	  		</div>
@@ -108,7 +84,7 @@
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
     <script type="text/javascript" src="${context}/resources/js/jquery.backstretch.min.js"></script>
     <script>
-        $.backstretch("${context}/resources/img/login/main.jpg", {speed: 500});
+        $.backstretch("${context}/resources/img/login/main_black.jpg", {speed: 500});
     </script>
 
 </body>

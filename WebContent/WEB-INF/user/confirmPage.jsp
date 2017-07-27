@@ -64,7 +64,7 @@
 					<p class="centered">
 						<a href="${context}/member/confirmUser"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a>
 					</p>
-					<h5 class="centered">Marcel Newman</h5>
+					<h5 class="centered">${loginUser.userId}</h5>
 
 					<li class="mt"><a href="${context}/info/userInfo"> <i
 							class="fa fa-desktop"></i> <span>신청현황</span>

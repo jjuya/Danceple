@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import basic.controllers.AbstractController;
 import basic.controllers.ModelAndView;
@@ -11,6 +12,7 @@ import dandb.GenreVO;
 import dandb.GradeVO;
 import dandb.TeacherVO;
 import dandb.TeamVO;
+import dandb.UserVO;
 import info.model.InfoDAO;
 import info.model.InfoDAOImpl;
 
@@ -27,21 +29,21 @@ public class AdminHome extends AbstractController{
 		
 		ModelAndView mav = new ModelAndView();
 		
-		try {
-			List<TeamVO> teamList = infoDAO.getTeamList(); 
-			List<GenreVO> genreList = infoDAO.getGenreList();
-			List<GradeVO> gradeList = infoDAO.getGradeList();
-			
-			mav.setViewName("/WEB-INF/admin/adminHome.jsp");
-			mav.addObject("teamList", teamList);
-			mav.addObject("genreList", genreList);
-			mav.addObject("gradeList", gradeList);
-		} catch (Exception e) {
-			e.printStackTrace();
-			mav.setViewName("/WEB-INF/views/result.jsp");
-			mav.addObject("msg", "리스트 출력에러\n관리자에게 문의하세요");
-			mav.addObject("url", "test");
-		}
+			try {
+				List<TeamVO> teamList = infoDAO.getTeamList(); 
+				List<GenreVO> genreList = infoDAO.getGenreList();
+				List<GradeVO> gradeList = infoDAO.getGradeList();
+
+				mav.setViewName("/WEB-INF/admin/adminHome.jsp");
+				mav.addObject("teamList", teamList);
+				mav.addObject("genreList", genreList);
+				mav.addObject("gradeList", gradeList);
+			} catch (Exception e) {
+				e.printStackTrace();
+				mav.setViewName("/WEB-INF/views/result.jsp");
+				mav.addObject("msg", "리스트 출력에러\n관리자에게 문의하세요");
+				mav.addObject("url", "javascript:history.back();");
+			}
 		
 		return mav;
 	}

@@ -124,7 +124,7 @@ CREATE TABLE tb_Team
 CREATE TABLE tb_User
 (
 	userid varchar2(20) NOT NULL,
-	name varchar2(30) NOT NULL,
+	username varchar2(30) NOT NULL,
 	phone varchar2(12) NOT NULL,
 	email varchar2(50) NOT NULL,
 	gradeid number NOT NULL,
@@ -291,12 +291,14 @@ insert into tb_team (teamid, teamname, teamday, location,maintime,pretime,teamur
 
 select * from tb_team;
 
+insert into tb_grade (gradeid, gradename) values(0, 'admin');
 insert into tb_grade (gradeid, gradename) values(1, '신규');
 insert into tb_grade (gradeid, gradename) values(2, '기존');
 insert into tb_grade (gradeid, gradename) values(3, '복귀');
 insert into tb_grade (gradeid, gradename) values(4, '헬퍼');
 
 select * from tb_grade;
+
 
 
 

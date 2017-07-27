@@ -268,6 +268,7 @@ insert into tb_team (teamid, teamname, teamday, location,maintime,pretime,teamur
 
 select * from tb_team;
 
+insert into tb_grade (gradeid, gradename) values(0, 'admin');
 insert into tb_grade (gradeid, gradename) values(1, '신규');
 insert into tb_grade (gradeid, gradename) values(2, '기존');
 insert into tb_grade (gradeid, gradename) values(3, '복귀');
